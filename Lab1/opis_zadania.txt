@@ -1,0 +1,10 @@
+Zadanie na laboratorium nr 1
+1. Zdefiniuj 2 tablice znakowe
+2. Pierwsz¹ tablice zainicjuj znakami ASCII '0','1',...,'9' i zakoñcz znakiem $
+3. Przepisz tablice pierwsz¹ do drugiej korzystaj¹c z regu³y:
+	a) pierwsz¹ cyfre przepisz niezmienion¹
+	b) kolejne cyfry otrzymasz dodaj¹c do siebie bie¿¹c¹ i poprzedni¹ cyfre tablicy pierwszej a nastêpnie dziel¹c ten wynik modulo 10. Tablica koñczy siê znakiem $
+4. Wypisz obydwie tablice w osobnych liniach
+
+Assembler MASM611
+odpalaæ pod dosbox
