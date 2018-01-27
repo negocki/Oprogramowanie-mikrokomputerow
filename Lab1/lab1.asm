@@ -1,5 +1,4 @@
 ;   PROGRAM  "lab1.asm"
-;	autor Karol Talko
 dane SEGMENT 	;segment danych
 
 Tablica1 db '73623854295121802353287342713810',"$" ;mozna modyfikowac, max 64 cyfry
@@ -7,17 +6,17 @@ Tablica2 db 64 dup ("$")
 
 dane ENDS
 
-rozkazy SEGMENT 'CODE' use16 	;segment zawieraj¹cy rozkazy programu
+rozkazy SEGMENT 'CODE' use16 	;segment zawierajÄ…cy rozkazy programu
 		ASSUME cs:rozkazy, ds:dane
 wystartuj:
 		mov ax, SEG dane
 		mov ds, ax ;ustawiamy dane jako segment danych DS
 		mov cx, Tablica2-Tablica1-2 ;dlugosc petli bo CX jest od petli
-		mov bx, OFFSET Tablica1 	;wpisanie do rejestru BX obszaru zawieraj¹cego wyswietlany tekst
+		mov bx, OFFSET Tablica1 	;wpisanie do rejestru BX obszaru zawierajÄ…cego wyswietlany tekst
 		mov si, OFFSET Tablica2
-		mov dx, bx 	;wpisanie do rejestru DL kodu ASCII kolejnego wyœwietlanego znaku
+		mov dx, bx 	;wpisanie do rejestru DL kodu ASCII kolejnego wyÅ›wietlanego znaku
 		mov ah, 9 ;wyswietlenie
-		int 21H 	;wyœwietlenie znaku za pomoc¹ funkcji nr 2 DOS
+		int 21H 	;wyÅ›wietlenie znaku za pomocÄ… funkcji nr 2 DOS
 		mov bx, OFFSET Tablica1 
 
 pierwszy_element: ;tylko dla pierwszego elementu przepisujemy go bez zmian
@@ -65,11 +64,11 @@ wyswietl_tablica2:
 		mov bx, OFFSET Tablica2	;wypisanie Tablicy 2 az do znaku $			
 		mov dx, bx 	
 		mov ah, 9
-		int 21H 	;wyœwietlenie znaku za pomoc¹ funkcji nr 2 DOS		
+		int 21H 	;wyÅ›wietlenie znaku za pomocÄ… funkcji nr 2 DOS		
 				
 koniec:
-		mov ah, 4CH 	;zakoñczenie programu – przekazanie sterowania
-				;do systemu, za pomoc¹ funkcji 4CH DOS
+		mov ah, 4CH 	;zakoÅ„czenie programu â€“ przekazanie sterowania
+				;do systemu, za pomocÄ… funkcji 4CH DOS
 		int 21H
 rozkazy ENDS
 
@@ -77,5 +76,5 @@ nasz_stos SEGMENT stack 	;segment stosu
 dw 128 dup (?)
 nasz_stos ENDS
 
-END wystartuj 			;wykonanie programu zacznie siê od rozkazu
-				;opatrzonego etykiet¹ wystartuj
+END wystartuj 			;wykonanie programu zacznie siÄ™ od rozkazu
+				;opatrzonego etykietÄ… wystartuj
